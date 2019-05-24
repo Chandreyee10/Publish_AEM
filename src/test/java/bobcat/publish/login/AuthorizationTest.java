@@ -18,6 +18,8 @@ import io.qameta.allure.Story;
 
 import bobcat.publish.pages.TestPage;
 
+import com.cognifide.qa.bb.aem.AemLogin;
+
 /**
  * Test for presenting how to log in to the page.
  */
@@ -34,18 +36,26 @@ public class AuthorizationTest {
 	
 	@Inject
 	private TestPage testPage;
+	
+	 @Inject
+	  private AemLogin aemLogin;
+
 
 	@Test
 	@Story("Login to AEM and open Test page")
 	@Description("Login to publish instance and open test page")
 	public void loginTest() throws ActionException {
-		//TestPage testpage = bobcatPageFactory.create("/content/we-retail/us/en.html", TestPage.class);
+		/*TestPage testpage = bobcatPageFactory.create("/content/we-retail/us/en.html", TestPage.class);
 		System.out.println("Inside 1");
 		controller.execute(AemActions.LOG_IN);
 		System.out.println("Inside 2");
 		testPage.open();
 		System.out.println("Inside 3");
-		assertTrue(testPage.isDisplayed());
+		assertTrue(testPage.isDisplayed());*/
+		aemLogin.authorLogin();
+	    testPage.open();
+	    assertTrue(testPage.isDisplayed());
+		
 	}
 
 }
