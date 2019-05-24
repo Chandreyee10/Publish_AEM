@@ -16,7 +16,7 @@ public class TestPage extends PublishPage {
   private BobcatWait bobcatWait;
 
   private String title = "English";
-  private String url = "/content/we-retail/us/en.html";
+  private String url = "/content/etap/LoginPage.html";
 
   public String getPageTitle() {
     return title;
